@@ -1,6 +1,5 @@
-import { HTMLAttributes, ReactNode } from 'react';
-import { breakPoints } from '@styles/breakpoints';
 import styled from '@emotion/styled';
+import { FontWeight, TextProps } from '@/types/atoms';
 
 function Text({ children, weight, responsiveSize, as = 'p', ...rest }: TextProps) {
   const cssWeight = convertWeightToCss(weight);
@@ -9,14 +8,6 @@ function Text({ children, weight, responsiveSize, as = 'p', ...rest }: TextProps
       {children}
     </ResponsiveText>
   );
-}
-
-interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
-  children?: ReactNode;
-  weight?: FontWeight;
-  responsiveSize?: { [key: BreakPointIndex]: string };
-  defaultSize?: string;
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
 }
 
 const ResponsiveText = styled.p<TextProps>`
@@ -49,8 +40,5 @@ function convertWeightToCss(weight?: FontWeight) {
       return weight;
   }
 }
-
-type FontWeight = number | 'medium' | 'bold' | 'regular' | 'lighter' | 'bolder';
-type BreakPointIndex = typeof breakPoints[number];
 
 export default Text;
