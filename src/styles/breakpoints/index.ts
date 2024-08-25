@@ -6,4 +6,9 @@ export const BREAKPOINT_MD = '1024px';
 
 export const BREAKPOINT_LG = '1280px';
 
-export const breakPoints = [BREAKPOINT_XS, BREAKPOINT_SM, BREAKPOINT_MD, BREAKPOINT_LG];
+export const breakPoints = {
+  xs: BREAKPOINT_XS,
+  sm: BREAKPOINT_SM,
+  md: BREAKPOINT_MD,
+  lg: BREAKPOINT_LG,
+};
