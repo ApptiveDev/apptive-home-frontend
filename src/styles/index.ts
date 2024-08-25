@@ -3,12 +3,12 @@ const lightColors = {
     main: '#FF9433',
     lighten: '#FFA14D',
     darken: '#FF861A',
-    passive: 'rgba(255, 148, 51, 0.13)', 
+    passive: 'rgba(255, 148, 51, 0.13)',
   },
   text: {
-    1: '#191B1C',
-    2: '#71787F',
-    3: '#B2B6BB',
+    prominent: '#191B1C',
+    moderate: '#71787F',
+    subtle: '#B2B6BB',
   },
   background: {
     main: '#FFFFFF',
@@ -16,8 +16,8 @@ const lightColors = {
     darken: '#F2F3F4',
   },
   border: {
-    1: '#ECEDEE',
-    2: '#202224',
+    subtle: '#ECEDEE',
+    prominent: '#DFE1E3',
   },
   absolute: {
     black: '#191B1C',
@@ -41,12 +41,12 @@ const darkColors = {
     main: '#FFA14D',
     lighten: '#E99346',
     darken: '#FFAF66',
-    passive: 'rgba(255, 161, 77, 0.13)', 
+    passive: 'rgba(255, 161, 77, 0.13)',
   },
   text: {
-    1: '#E5E7E8',
-    2: '#7E858D',
-    3: '#585D63',
+    prominent: '#E5E7E8',
+    moderate: '#7E858D',
+    subtle: '#585D63',
   },
   background: {
     main: '#131415',
@@ -54,8 +54,8 @@ const darkColors = {
     darken: '#0D0D0E',
   },
   border: {
-    1: '#DFE1E3',
-    2: '#26282B',
+    subtle: '#26282B',
+    prominent: '#202224',
   },
   absolute: {
     black: '#131415',
