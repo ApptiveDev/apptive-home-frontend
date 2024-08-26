@@ -3,10 +3,16 @@ import { FontWeight, ScreenSize } from '@/types/styles';
 import { TextProps } from '@/types/props';
 import { breakPoints } from '@styles/breakpoints';
 
-function Text({ children, weight, responsiveSize, as = 'p', ...rest }: TextProps) {
+function Text({ children, weight, responsiveSize, as = 'p', color, ...rest }: TextProps) {
   const cssWeight = convertWeightToCss(weight);
   return (
-    <ResponsiveText as={as} weight={cssWeight} responsiveSize={responsiveSize || {}} {...rest}>
+    <ResponsiveText
+      as={as}
+      weight={cssWeight}
+      responsiveSize={responsiveSize}
+      color={color}
+      {...rest}
+    >
       {children}
     </ResponsiveText>
   );
@@ -15,6 +21,7 @@ function Text({ children, weight, responsiveSize, as = 'p', ...rest }: TextProps
 const ResponsiveText = styled.p<TextProps>`
   font-weight: ${(props: TextProps) => props.weight};
   font-size: ${(props: TextProps) => props.defaultSize};
+  color: ${(props: TextProps) => props.color};
   ${(props: TextProps) =>
     props.responsiveSize && Object.entries(props.responsiveSize).map(([breakpoint, value]) => `
       @media (min-width: ${breakPoints[breakpoint as ScreenSize]}) {
