@@ -10,7 +10,10 @@ export default meta;
 type Story = StoryObj<typeof Container>;
 
 const GridContent = () => (
-  <Grid columns={3} gap={16}>
+  <Grid columns={3} gap={16} responsiveColumns={{
+    md: 6,
+  }}
+  >
     <div style={{ background: '#e0e0e0', padding: '20px' }}>Grid Item</div>
     <div style={{ background: '#e0e0e0', padding: '20px' }}>Grid Item</div>
     <div style={{ background: '#e0e0e0', padding: '20px' }}>Grid Item</div>
