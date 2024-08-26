@@ -1,6 +1,6 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { ImgHTMLAttributes } from 'react';
-import { ResponsiveCSSObjects } from '@/types/atoms';
+import { ResponsiveCSSObjects } from '@/types/styles';
 import { serializeResponsiveCss } from '@/utils';
 
 type AspectRatio = '1:1' | '4:3' | '16:9' | '21:9';
@@ -30,19 +30,19 @@ function Image({
     };
 
     return css`
-    position: relative;
-    width: 100%;
-    padding-top: ${ratioMap[ratio]}%;
-    overflow: hidden;
-
-    img {
-      position: absolute;
-      
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      padding-top: ${ratioMap[ratio]}%;
+      overflow: hidden;
+  
+      img {
+        position: absolute;
+        
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }`
     ;
   };
