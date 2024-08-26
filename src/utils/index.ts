@@ -1,6 +1,6 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { breakPoints } from '@styles/breakpoints';
-import { ResponsiveCSSObjects } from '@/types/atoms';
+import { ResponsiveCSSObjects, ScreenSize } from '@/types/styles';
 
 export function serializeResponsiveCss(sizes?: ResponsiveCSSObjects): SerializedStyles {
   if (! sizes) {
@@ -9,7 +9,7 @@ export function serializeResponsiveCss(sizes?: ResponsiveCSSObjects): Serialized
 
   const ret: SerializedStyles[] = [];
   Object.entries(sizes).forEach(([sizeKey, cssObject ]) => {
-    const key = sizeKey as keyof typeof breakPoints;
+    const key = sizeKey as ScreenSize;
     const style = css`
       @media (min-width: ${breakPoints[key]}) {
         ${css(cssObject)} 
