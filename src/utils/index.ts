@@ -20,3 +20,22 @@ export function serializeResponsiveCss(sizes?: ResponsiveCSSObjects): Serialized
 
   return css(ret);
 }
+
+export function serializeResponsiveColumns(responsiveColumns?: { [key in ScreenSize]: number }): SerializedStyles {
+  if (!responsiveColumns) {
+    return css``;
+  }
+
+  const ret: SerializedStyles[] = [];
+  Object.entries(responsiveColumns).forEach(([sizeKey, columns]) => {
+    const key = sizeKey as ScreenSize;
+    const style = css`
+      @media (min-width: ${breakPoints[key]}) {
+        grid-template-columns: ${columns};
+      }
+    `;
+    ret.push(style);
+  });
+
+  return css(ret);
+}
