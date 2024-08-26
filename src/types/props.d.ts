@@ -15,7 +15,7 @@ export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
 export interface GridProps {
   children: ReactNode;
   columns?: string | number;
-  responsiveColumns?: { [key in ScreenSize]: number }
+  responsiveColumns?: ResponsiveColumns;
   rows?: string | number;
   gap?: number | string;
   columnGap?: number | string;
