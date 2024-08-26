@@ -6,7 +6,7 @@ import { CSSObject } from '@emotion/react';
 export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
   children?: ReactNode;
   weight?: FontWeight;
-  responsiveSize?: { [key in ScreenSize]: string };
+  responsiveSize?: { [key in ScreenSize]?: string };
   defaultSize?: string;
   color?: string;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
