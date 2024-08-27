@@ -13,21 +13,21 @@ export const TextBody = {
   Large: createTextComponent({
     defaultSize: '15px',
     responsiveSize: {
-      md: '22px',
+      sm: '22px',
     },
     as: 'p',
   }),
   Medium: createTextComponent({
     defaultSize: '13px',
     responsiveSize: {
-      md: '18px',
+      sm: '18px',
     },
     as: 'p',
   }),
   Small: createTextComponent({
     defaultSize: '11px',
     responsiveSize: {
-      md: '16px',
+      sm: '16px',
     },
     as: 'p',
   }),
@@ -37,7 +37,7 @@ export const Heading = {
   XLarge: createTextComponent({
     defaultSize: '32px',
     responsiveSize: {
-      md: '46px',
+      sm: '46px',
     },
     as: 'h1',
     weight: 'bold',
@@ -45,7 +45,7 @@ export const Heading = {
   Large: createTextComponent({
     defaultSize: '28px',
     responsiveSize: {
-      md: '40px',
+      sm: '40px',
     },
     as: 'h2',
     weight: 'bold',
@@ -53,7 +53,7 @@ export const Heading = {
   Medium: createTextComponent({
     defaultSize: '24px',
     responsiveSize: {
-      md: '34px',
+      sm: '34px',
     },
     as: 'h3',
     weight: 'bold',
@@ -61,7 +61,7 @@ export const Heading = {
   Small: createTextComponent({
     defaultSize: '20px',
     responsiveSize: {
-      md: '28px',
+      sm: '28px',
     },
     as: 'h4',
     weight: 'bold',
@@ -69,7 +69,7 @@ export const Heading = {
   XSmall: createTextComponent({
     defaultSize: '18px',
     responsiveSize: {
-      md: '26px',
+      sm: '26px',
     },
     as: 'h5',
     weight: 'bold',
@@ -80,21 +80,21 @@ export const Paragraph = {
   Large: createTextComponent({
     defaultSize: '18px',
     responsiveSize: {
-      md: '30px',
+      sm: '30px',
     },
     as: 'p',
   }),
   Medium: createTextComponent({
     defaultSize: '16px',
     responsiveSize: {
-      md: '26px',
+      sm: '26px',
     },
     as: 'p',
   }),
   Small: createTextComponent({
     defaultSize: '14px',
     responsiveSize: {
-      md: '24px',
+      sm: '24px',
     },
     as: 'p',
   }),
