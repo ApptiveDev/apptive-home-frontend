@@ -63,7 +63,7 @@ function getBorderStyle(theme: ButtonTheme) {
 
 function getHoverBackgroundColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return colors.light.background.darken;
+    return colors.light.text.prominent;
   }
   if (theme === 'dark') {
     return colors.light.primary.main;
@@ -72,8 +72,8 @@ function getHoverBackgroundColor(theme: ButtonTheme) {
 }
 
 function getHoverColor(theme: ButtonTheme) {
-  if (theme === 'dark') {
-    return colors.light.text.prominent;
+  if (theme === 'light-outlined') {
+    return colors.light.background.main;
   }
   return colors.light.text.prominent;
 }
