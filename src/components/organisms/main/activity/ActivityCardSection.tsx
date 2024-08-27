@@ -8,13 +8,13 @@ function ActivityCardSection() {
 
     return images.map((path, index) => {
       return (
-          <ActivityCard
-            title={'title'}
-            order={index + 1}
-            icon={path}
-            paragraph={'paragraph'}
-            key={path}
-          />
+        <ActivityCard
+          title={'title'}
+          order={index + 1}
+          icon={path}
+          paragraph={'paragraph'}
+          key={path}
+        />
       );
     });
   };
