@@ -4,7 +4,7 @@ import { ResponsiveCSSObjects } from '@/types/styles';
 import { serializeResponsiveCss } from '@/utils';
 
 interface ContainerProps {
-  children: ReactNode;
+  children?: ReactNode;
   direction?: 'row' | 'column';
   justify?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
   align?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
