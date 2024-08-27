@@ -9,6 +9,8 @@ interface ContainerProps {
   justify?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
   align?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
   size?: ContainerSize;
+  maxWidth?: string;
+  padding?: string;
   gap?: number | string;
   style?: CSSObject;
   responsiveStyle?: ResponsiveCSSObjects;
@@ -20,6 +22,8 @@ function Container({
   justify = 'flex-start',
   align = 'flex-start',
   size,
+  maxWidth,
+  padding,
   gap = 0,
   style,
   responsiveStyle,
@@ -30,6 +34,8 @@ function Container({
     flexDirection: direction,
     justifyContent: justify,
     alignItems: align,
+    maxWidth,
+    padding,
     width: fixedSize.width,
     height: fixedSize.height,
     gap,
