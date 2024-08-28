@@ -1,7 +1,9 @@
 import { css } from '@emotion/react';
-import { Heading, TextBody } from '@components/atoms/text/TextFactory';
+import { Paragraph } from '@components/atoms/text/TextFactory';
 import { colors } from '@styles/colors';
 import Container from '@components/atoms/container/Container';
+import styled from '@emotion/styled';
+import { BREAKPOINT_SM } from '@styles/breakpoints';
 
 interface ActivityCardProps {
   title: string;
@@ -24,25 +26,50 @@ function ActivityCard({ title, order, icon, paragraph }: ActivityCardProps) {
 
   return (
     <Container size="full-width" style={cardStyle}>
-      <Container padding="48px 52px" gap="48px" justify="space-between">
-        <Container direction="column" gap="16px">
-          <Heading.Small>
+      <Container
+        responsiveStyle={{
+          sm: {
+            padding: '48px 52px',
+          },
+        }}
+        gap="48px"
+        justify="space-between"
+        padding="30px 40px"
+      >
+        <Container direction="column" gap="8px">
+          <Paragraph.Large weight="bold">
             <span css={orderStyle}>{order < 10 ? `0${order}` : order}</span>
             {title}
-          </Heading.Small>
-          <TextBody.Small style={{
+          </Paragraph.Large>
+          <Paragraph.Small style={{
             lineHeight: '1.2rem',
           }}
           >
             {paragraph}
-          </TextBody.Small>
+          </Paragraph.Small>
         </Container>
-        <Container size={{ width: '131px', height: '118px' }} justify="center" align="center">
-          <img src={icon} alt="icon" />
+        <Container
+          size={{ width: '80px', height: '80px' }}
+          justify="center"
+          align="center"
+          responsiveStyle={{
+            sm: {
+              height: '100px',
+            },
+          }}
+        >
+          <CardImage src={icon} alt="icon" />
         </Container>
       </Container>
     </Container>
   );
 }
+
+const CardImage = styled.img`
+  height: 40px;
+  @media (min-width: ${BREAKPOINT_SM}) {
+    height: 60px;
+  }
+`;
 
 export default ActivityCard;

@@ -12,14 +12,14 @@ function ActivitySection() {
       backgroundColor: colors.light.background.darken,
     }}
     >
-      <Container size="full-width" align="center" direction="column"  maxWidth={MAX_CONTENT_WIDTH}>
-        <ActivityContainer>
-          <Container size="full-width" justify="flex-end">
-            <Heading.XLarge>Activity of APPTIVE</Heading.XLarge>
-          </Container>
-        </ActivityContainer>
-        <ActivityCardSection />
-      </Container>
+      <ActivityContainer>
+        <Container size="full-width" justify="flex-end">
+          <Heading.XLarge>Activity of APPTIVE</Heading.XLarge>
+        </Container>
+        <Container size="full-width" padding="40px 0">
+          <ActivityCardSection />
+        </Container>
+      </ActivityContainer>
     </Container>
   );
 }
@@ -32,10 +32,9 @@ function ActivityContainer({ children }: ActivityContainerProps) {
       direction="column"
       padding="20px"
       style={{
-        padding: '30px 20px',
+        padding: '50px 20px',
       }}
       responsiveStyle={{
-        sm: { padding: '50px 20px' },
         lg: { padding: '100px 20px' },
       }}
     >
