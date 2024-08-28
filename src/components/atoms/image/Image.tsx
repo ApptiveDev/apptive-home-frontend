@@ -56,13 +56,13 @@ function Image({
 
 
   return (
-    <div css={[aspectRatio && getAspectRatioStyle(aspectRatio)]}>
+    <div css={[aspectRatio && getAspectRatioStyle(aspectRatio), cssStyle, responsiveCss]}>
       <img
         src={src}
         alt={alt}
         loading="lazy"
         {...rest}
-        css={[imageStyle, cssStyle, responsiveCss]}
+        css={[imageStyle]}
       />
     </div>
   );

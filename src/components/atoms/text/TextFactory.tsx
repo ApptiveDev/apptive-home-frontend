@@ -11,21 +11,21 @@ export function createTextComponent(props: Partial<TextProps>) {
 
 export const TextBody = {
   Large: createTextComponent({
-    defaultSize: '15px',
+    defaultSize: '16px',
     responsiveSize: {
       sm: '22px',
     },
     as: 'p',
   }),
   Medium: createTextComponent({
-    defaultSize: '13px',
+    defaultSize: '14px',
     responsiveSize: {
       sm: '18px',
     },
     as: 'p',
   }),
   Small: createTextComponent({
-    defaultSize: '11px',
+    defaultSize: '12px',
     responsiveSize: {
       sm: '16px',
     },
@@ -80,21 +80,21 @@ export const Paragraph = {
   Large: createTextComponent({
     defaultSize: '18px',
     responsiveSize: {
-      sm: '30px',
+      sm: '24px',
     },
     as: 'p',
   }),
   Medium: createTextComponent({
     defaultSize: '16px',
     responsiveSize: {
-      sm: '26px',
+      sm: '20px',
     },
     as: 'p',
   }),
   Small: createTextComponent({
     defaultSize: '14px',
     responsiveSize: {
-      sm: '24px',
+      sm: '18px',
     },
     as: 'p',
   }),
