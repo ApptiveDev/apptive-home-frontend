@@ -24,6 +24,7 @@ const MainSection = ({ mode }: MainSectionProps) => {
     justify-content: center;
     align-items: center;
     background: ${colorScheme.background.main};
+    padding: 0 35px;
   `;
   const Container = styled.div`
     display: flex;
