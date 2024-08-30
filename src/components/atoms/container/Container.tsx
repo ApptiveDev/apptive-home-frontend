@@ -39,11 +39,10 @@ function Container({
     width: fixedSize.width,
     height: fixedSize.height,
     gap,
-    ...style,
   };
 
   return (
-    <div css={[css(containerStyle), serializeResponsiveCss(responsiveStyle)]}>{children}</div>
+    <div css={[css(containerStyle), css(style), serializeResponsiveCss(responsiveStyle)]}>{children}</div>
   );
 }
 
