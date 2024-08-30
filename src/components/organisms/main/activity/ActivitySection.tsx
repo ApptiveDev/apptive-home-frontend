@@ -1,10 +1,10 @@
-import Container from "@components/atoms/container/Container";
-import { MAX_CONTENT_WIDTH } from "@styles/sizes";
-import { Heading } from "@components/atoms/text/TextFactory";
-import { colors } from "@styles/colors";
-import { ReactNode } from "react";
-import ActivityCardSection from "@components/organisms/main/activity/ActivityCardSection";
-import ActivityTimelineSection from "./ActivityTimelineSection";
+import Container from '@components/atoms/container/Container';
+import { MAX_CONTENT_WIDTH } from '@styles/sizes';
+import { Heading } from '@components/atoms/text/TextFactory';
+import { colors } from '@styles/colors';
+import { ReactNode } from 'react';
+import ActivityCardSection from '@components/organisms/main/activity/ActivityCardSection';
+import ActivityTimelineSection from './ActivityTimelineSection';
 
 function ActivitySection() {
   return (
@@ -41,10 +41,10 @@ function ActivityContainer({ children }: ActivityContainerProps) {
       direction="column"
       padding="20px"
       style={{
-        padding: "50px 20px",
+        padding: '50px 20px',
       }}
       responsiveStyle={{
-        lg: { padding: "100px 20px" },
+        lg: { padding: '100px 20px' },
       }}
     >
       {children}

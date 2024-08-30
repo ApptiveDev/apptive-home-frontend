@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from "react";
-import styled from "@emotion/styled";
-import { colors } from "@/styles/colors";
-import { breakPoints } from "@/styles/breakpoints";
+import { useState } from 'react';
+import styled from '@emotion/styled';
+import { colors } from '@/styles/colors';
+import { breakPoints } from '@/styles/breakpoints';
 
 interface MainSectionProps {
-  mode: "light" | "dark";
+  mode: 'light' | 'dark';
 }
 const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
   const colorScheme = colors[mode];
@@ -43,7 +43,7 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
     height: 20px;
     border-radius: 50%;
     background: ${({ active }) =>
-      active ? colorScheme.primary.main : colorScheme.absolute.white};
+    active ? colorScheme.primary.main : colorScheme.absolute.white};
     border: 2px solid ${colorScheme.text.prominent};
     cursor: pointer;
     transition: background-color 0.3s;
@@ -104,18 +104,18 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
 
   const activities = [
     {
-      month: "9월",
+      month: '9월',
       details: [
-        "신입생 OT",
-        "노션, 디스코드 워크샵",
-        "GIT 워크샵",
-        "앱티브 MT",
+        '신입생 OT',
+        '노션, 디스코드 워크샵',
+        'GIT 워크샵',
+        '앱티브 MT',
       ],
     },
-    { month: "10월", details: ["BITs 네트워킹 행사", "중간고사"] },
-    { month: "11월", details: ["홈커밍데이", "아이디어톤"] },
-    { month: "12월", details: ["기말고사", "프로젝트 팀빌딩"] },
-    { month: "1월", details: ["데모데이", "2학기 활동 종료"] },
+    { month: '10월', details: ['BITs 네트워킹 행사', '중간고사'] },
+    { month: '11월', details: ['홈커밍데이', '아이디어톤'] },
+    { month: '12월', details: ['기말고사', '프로젝트 팀빌딩'] },
+    { month: '1월', details: ['데모데이', '2학기 활동 종료'] },
   ];
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
