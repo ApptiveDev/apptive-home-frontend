@@ -112,20 +112,20 @@ const YearTextBox = styled.div<ModeProps>`
   padding-top: 100px;
 
   @media (max-width: ${breakPoints.md}) {
-    width: 320px;
-    height: 420px;
+    width: 350px;
+    height: 450px;
     padding-top: 80px;
   }
 
   @media (max-width: ${breakPoints.sm}) {
-    width: 280px;
-    height: 370px;
+    width: 350px;
+    height: 420px;
     padding-top: 60px;
   }
 
   @media (max-width: ${breakPoints.xs}) {
-    width: 240px;
-    height: 320px;
+    width: 300px;
+    height: 400px;
     padding-top: 50px;
   }
 `;
