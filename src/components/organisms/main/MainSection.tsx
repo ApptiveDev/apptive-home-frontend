@@ -9,6 +9,7 @@ import {
 } from '@/components/molecules/YearText';
 import styled from '@emotion/styled';
 import { colors } from '@/styles/colors';
+import { breakPoints } from '@/styles/breakpoints';
 
 interface MainSectionProps {
   mode: 'light' | 'dark';
@@ -29,11 +30,18 @@ const MainSection = ({ mode }: MainSectionProps) => {
     flex-direction: column;
     gap: 60px;
     max-width: 1000px;
+    width: 100%;
   `;
   const Section = styled.div`
     display: flex;
     align-items: center;
     gap: 50px;
+
+    @media (max-width: ${breakPoints.md}) {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
   `;
   const TextBox = styled.div`
     margin-top: 200px;
@@ -46,6 +54,16 @@ const MainSection = ({ mode }: MainSectionProps) => {
   const Image = styled.img`
     width: 250px;
     height: 250px;
+
+    @media (max-width: ${breakPoints.sm}) {
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (max-width: ${breakPoints.xs}) {
+      width: 150px;
+      height: 150px;
+    }
   `;
 
   return (

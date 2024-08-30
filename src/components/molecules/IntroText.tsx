@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@/styles/colors';
+import { breakPoints } from '@/styles/breakpoints';
 
 type TextBoxProps = {
   children: React.ReactNode;
@@ -19,6 +20,25 @@ const IntroText = styled.div<TextBoxProps>`
   font-size: 18px;
   font-weight: 600;
   line-height: 30px;
+
+  @media (max-width: ${breakPoints.md}) {
+    padding: 50px 35px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  @media (max-width: ${breakPoints.sm}) {
+    padding: 40px 25px;
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  @media (max-width: ${breakPoints.xs}) {
+    padding: 30px 20px;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 24px;
+  }
 `;
 
 export default IntroText;

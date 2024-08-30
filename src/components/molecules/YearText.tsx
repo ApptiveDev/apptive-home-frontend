@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '@/styles/colors';
+import { breakPoints } from '@/styles/breakpoints';
 
 interface ModeProps {
   mode: 'light' | 'dark';
@@ -12,6 +13,22 @@ const YearText = styled.div<ModeProps>`
   position: absolute;
   top: -15px;
   left: -5px;
+
+  @media (max-width: ${breakPoints.md}) {
+    font-size: 80px;
+  }
+
+  @media (max-width: ${breakPoints.sm}) {
+    font-size: 60px;
+    top: -10px;
+    left: -2px;
+  }
+
+  @media (max-width: ${breakPoints.xs}) {
+    font-size: 50px;
+    top: -8px;
+    left: -5px;
+  }
 `;
 
 const SliderWrapper = styled.div<ModeProps>`
@@ -25,6 +42,21 @@ const SliderWrapper = styled.div<ModeProps>`
   margin: 20px;
   overflow: hidden;
   background-color: ${({ mode }) => colors[mode].background.main};
+
+  @media (max-width: ${breakPoints.md}) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (max-width: ${breakPoints.sm}) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: ${breakPoints.xs}) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 const SliderContainer = styled.div`
@@ -34,6 +66,21 @@ const SliderContainer = styled.div`
   gap: 15px;
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: ${breakPoints.md}) {
+    padding-left: 30px;
+    gap: 10px;
+  }
+
+  @media (max-width: ${breakPoints.sm}) {
+    padding-left: 20px;
+    gap: 8px;
+  }
+
+  @media (max-width: ${breakPoints.xs}) {
+    padding-left: 10px;
+    gap: 5px;
   }
 `;
 
@@ -48,6 +95,24 @@ const YearTextBox = styled.div<ModeProps>`
   background: ${({ mode }) => colors[mode].background.darken};
   scroll-snap-align: start;
   padding-top: 100px;
+
+  @media (max-width: ${breakPoints.md}) {
+    width: 320px;
+    height: 420px;
+    padding-top: 80px;
+  }
+
+  @media (max-width: ${breakPoints.sm}) {
+    width: 280px;
+    height: 370px;
+    padding-top: 60px;
+  }
+
+  @media (max-width: ${breakPoints.xs}) {
+    width: 240px;
+    height: 320px;
+    padding-top: 50px;
+  }
 `;
 
 const ExplainText = styled.div<ModeProps>`
@@ -58,6 +123,21 @@ const ExplainText = styled.div<ModeProps>`
     padding-right: 10px;
     line-height: 35px;
     color: ${({ mode }) => colors[mode].text.prominent};
+
+    @media (max-width: ${breakPoints.md}) {
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+    @media (max-width: ${breakPoints.sm}) {
+      font-size: 13px;
+      line-height: 28px;
+    }
+
+    @media (max-width: ${breakPoints.xs}) {
+      font-size: 12px;
+      line-height: 25px;
+    }
   }
 `;
 
