@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
-import { colors } from '@/styles/colors';
-import { breakPoints } from '@/styles/breakpoints';
+import styled from "@emotion/styled";
+import { colors } from "@/styles/colors";
+import { breakPoints } from "@/styles/breakpoints";
 
 interface ModeProps {
-  mode: 'light' | 'dark';
+  mode: "light" | "dark";
 }
 
 const YearText = styled.div<ModeProps>`
@@ -82,6 +82,21 @@ const SliderContainer = styled.div`
     padding-left: 10px;
     gap: 5px;
   }
+
+  @media (max-width: ${breakPoints.md}) {
+    padding-left: 30px;
+    gap: 10px;
+  }
+
+  @media (max-width: ${breakPoints.sm}) {
+    padding-left: 20px;
+    gap: 8px;
+  }
+
+  @media (max-width: ${breakPoints.xs}) {
+    padding-left: 10px;
+    gap: 5px;
+  }
 `;
 
 const YearTextBox = styled.div<ModeProps>`
@@ -97,20 +112,20 @@ const YearTextBox = styled.div<ModeProps>`
   padding-top: 100px;
 
   @media (max-width: ${breakPoints.md}) {
-    width: 350px;
-    height: 450px;
+    width: 320px;
+    height: 420px;
     padding-top: 80px;
   }
 
   @media (max-width: ${breakPoints.sm}) {
-    width: 350px;
-    height: 420px;
+    width: 280px;
+    height: 370px;
     padding-top: 60px;
   }
 
   @media (max-width: ${breakPoints.xs}) {
-    width: 300px;
-    height: 400px;
+    width: 240px;
+    height: 320px;
     padding-top: 50px;
   }
 `;
