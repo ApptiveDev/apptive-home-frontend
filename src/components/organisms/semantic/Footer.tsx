@@ -8,7 +8,7 @@ function Footer() {
     return (
         <Container size="full-width" justify="center" style={{backgroundColor: '#1B1B1B'}}>
             <Container
-              size={{ width: '100%', height: '410px' }}
+              size={{ width: '100%', height: '320px' }}
               justify="space-between"
               align="center"
               maxWidth="1210px"
@@ -20,21 +20,21 @@ function Footer() {
                     <TextBody.Medium weight="bold"color="white">부산대학교 대표 IT 프로젝트 동아리</TextBody.Medium>
                 </Container>
                 <Container gap="12px" direction="column" >
-                    <a rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" style={{textDecoration:'underline', color:'white'}}>
+                    <a rel="stylesheet" href="" style={{textDecoration:'underline', color:'white'}}>
                         <Container gap="5px">
                             Notion
                         <Image src={linkIcon} alt="link icon" />
                         </Container>
                         
                     </a>
-                    <a rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" style={{textDecoration:'underline', color:'white'}}>
+                    <a rel="stylesheet" href="" style={{textDecoration:'underline', color:'white'}}>
                         <Container gap="5px">
                             Discord
                         <Image src={linkIcon} alt="link icon" />
                         </Container>
                         
                     </a>
-                    <a rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" style={{textDecoration:'underline', color:'white'}}>
+                    <a rel="stylesheet" href="" style={{textDecoration:'underline', color:'white'}}>
                         <Container gap="5px">
                             Instagram
                         <Image src={linkIcon} alt="link icon" />
