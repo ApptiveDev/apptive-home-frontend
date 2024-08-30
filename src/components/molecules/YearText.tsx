@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
-import { colors } from "@/styles/colors";
-import { breakPoints } from "@/styles/breakpoints";
+import styled from '@emotion/styled';
+import { colors } from '@/styles/colors';
+import { breakPoints } from '@/styles/breakpoints';
 
 interface ModeProps {
-  mode: "light" | "dark";
+  mode: 'light' | 'dark';
 }
 
 const YearText = styled.div<ModeProps>`
@@ -66,21 +66,6 @@ const SliderContainer = styled.div`
   gap: 15px;
   ::-webkit-scrollbar {
     display: none;
-  }
-
-  @media (max-width: ${breakPoints.md}) {
-    padding-left: 30px;
-    gap: 10px;
-  }
-
-  @media (max-width: ${breakPoints.sm}) {
-    padding-left: 20px;
-    gap: 8px;
-  }
-
-  @media (max-width: ${breakPoints.xs}) {
-    padding-left: 10px;
-    gap: 5px;
   }
 
   @media (max-width: ${breakPoints.md}) {
