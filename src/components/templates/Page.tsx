@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Header from '@components/organisms/semantic/Header';
+import Footer from '../organisms/semantic/Footer';
 
 interface PageProps {
   children?: ReactNode;
@@ -13,7 +14,9 @@ function Page({ children, hideHeader }: PageProps) {
         ? null
         : <Header />
       }
+
       {children}
+      <Footer />
     </>
   );
 }
