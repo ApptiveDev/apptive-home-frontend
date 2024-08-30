@@ -2,6 +2,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { colors } from "@/styles/colors";
+import { breakPoints } from "@/styles/breakpoints";
 
 interface MainSectionProps {
   mode: "light" | "dark";
@@ -19,9 +20,9 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
   const TimelineContainer = styled.div`
     position: relative;
     display: flex;
-    flex-direction: column; /* 세로 방향으로 정렬 */
-    align-items: left; /* 중앙 정렬로 변경 */
-    max-width: 120px; /* 최대 너비 설정 */
+    flex-direction: column;
+    align-items: left;
+    min-width: 120px;
     padding: 0px 20px;
     padding-top: 20px;
     box-sizing: border-box;
@@ -29,12 +30,12 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
 
   const VerticalLine = styled.div`
     position: absolute;
-    left: 32px; /* 중앙에 위치하도록 설정 */
-    transform: translateX(-50%); /* 정확히 중앙에 위치 */
+    left: 32px;
+    transform: translateX(-50%);
     width: 2px;
     height: 200px;
     background: ${colorScheme.text.prominent};
-    z-index: 0; /* 동그라미 뒤에 위치하도록 */
+    z-index: 0;
   `;
 
   const Circle = styled.div<{ active: boolean }>`
@@ -60,6 +61,12 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
     grid-template-rows: repeat(2, auto);
     gap: 20px;
     box-sizing: border-box;
+
+    @media (max-width: ${breakPoints.sm}) {
+      margin-left: 0; /* 작은 화면에서는 왼쪽 여백 제거 */
+      grid-template-columns: 1fr; /* 작은 화면에서는 1열로 배치 */
+      grid-template-rows: auto; /* 행 높이 자동 조정 */
+    }
   `;
 
   const ActivityDetailItem = styled.div`
@@ -76,12 +83,17 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
     font-weight: 400;
     width: 100%;
     box-sizing: border-box;
+
+    @media (max-width: ${breakPoints.sm}) {
+      font-size: 16px; /* 작은 화면에서는 폰트 크기 조정 */
+      padding: 8px; /* 작은 화면에서는 패딩 조정 */
+    }
   `;
 
   const MonthsContainer = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* 아래 여백 추가 */
+    margin-bottom: 20px;
   `;
 
   const MonthLabel = styled.div`
