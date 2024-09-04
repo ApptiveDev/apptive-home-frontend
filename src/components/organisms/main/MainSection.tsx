@@ -67,6 +67,13 @@ const MainSection = ({ mode }: MainSectionProps) => {
     }
   `;
 
+  const SectionReversed = styled(Section)`
+  @media (max-width: ${breakPoints.md}) {
+     flex-direction: column-reverse;
+  }
+`;
+
+
   return (
     <Wrapper>
       <TextBox>
@@ -84,14 +91,14 @@ const MainSection = ({ mode }: MainSectionProps) => {
             전체 실력 향상을 목표로 합니다.
           </IntroText>
         </Section>
-        <Section>
+        <SectionReversed>
           <IntroText mode={mode}>
             동아리 활동은 1년을 주기로 하며, 활동 이후 명예회원으로 전환하고
             동문회에 속하게 됩니다. 이후에도 현직자 네트워킹, 연합동아리 활동,
             테크 세미나 참석 등 자유로운 동아리 활동이 가능합니다.
           </IntroText>
           <Image src="src/assets/images/main/girlIntro.png" alt="girlIntro" />
-        </Section>
+        </SectionReversed>
       </Container>
       <TextBox>
         <Heading.XLarge color={colorScheme.text.prominent}>
