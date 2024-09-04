@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { colors } from '@/styles/colors';
 import { breakPoints } from '@/styles/breakpoints';
@@ -62,9 +62,9 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
     box-sizing: border-box;
 
     @media (max-width: ${breakPoints.sm}) {
-      margin-left: 0; /* 작은 화면에서는 왼쪽 여백 제거 */
-      grid-template-columns: 1fr; /* 작은 화면에서는 1열로 배치 */
-      grid-template-rows: auto; /* 행 높이 자동 조정 */
+      margin-left: 0; 
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
     }
   `;
 
@@ -84,8 +84,8 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
     box-sizing: border-box;
 
     @media (max-width: ${breakPoints.sm}) {
-      font-size: 16px; /* 작은 화면에서는 폰트 크기 조정 */
-      padding: 8px; /* 작은 화면에서는 패딩 조정 */
+      font-size: 16px; 
+      padding: 8px; 
     }
   `;
 
@@ -117,17 +117,28 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
     { month: '1월', details: ['데모데이', '2학기 활동 종료'] },
   ];
 
+  const getCurrentMonthIndex = () => {
+    const currentMonth = new Date().getMonth() + 1; // JavaScript의 월은 0부터 시작하므로 +1
+    const activityMonths = ['9월', '10월', '11월', '12월', '1월'];
+    return activityMonths.indexOf(`${currentMonth}월`);
+  };
+
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const initialIndex = getCurrentMonthIndex();
+    setActiveIndex(initialIndex !== -1 ? initialIndex : 0);
+  }, []);
 
   return (
     <Wrapper>
       <TimelineContainer>
         <VerticalLine />
         {activities.map((activity, index) => (
-          <MonthsContainer key={activity.month}>
+          <MonthsContainer key={activity.month}
+          onMouseEnter={() => setActiveIndex(index)}>
             <Circle
               active={activeIndex === index}
-              onClick={() => setActiveIndex(index)}
             />
             <MonthLabel>{activity.month}</MonthLabel>
           </MonthsContainer>
