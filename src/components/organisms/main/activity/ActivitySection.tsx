@@ -22,7 +22,7 @@ function ActivitySection() {
         <Container size="full-width" padding="40px 0">
           <ActivityCardSection />
         </Container>
-        <Container size="full-width" padding="0 40px">
+        <Container size="full-width">
           <Heading.XSmall>Activity of 2nd semester 2024</Heading.XSmall>
         </Container>
         <Container size="full-width">

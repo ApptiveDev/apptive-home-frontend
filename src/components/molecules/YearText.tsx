@@ -40,6 +40,7 @@ const SliderWrapper = styled.div<ModeProps>`
   align-items: center;
   width: 100%;
   margin: 20px;
+  margin-bottom: 150px;
   overflow: hidden;
   background-color: ${({ mode }) => colors[mode].background.main};
 
