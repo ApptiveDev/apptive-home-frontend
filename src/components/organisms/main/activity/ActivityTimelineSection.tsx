@@ -129,7 +129,7 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
     const initialIndex = getCurrentMonthIndex();
     setActiveIndex(initialIndex !== -1 ? initialIndex : 0);
   }, []);
-
+    
   return (
     <Wrapper>
       <TimelineContainer>
@@ -139,6 +139,7 @@ const ActivityTimelineSection = ({ mode }: MainSectionProps) => {
           onMouseEnter={() => setActiveIndex(index)}>
             <Circle
               active={activeIndex === index}
+
             />
             <MonthLabel>{activity.month}</MonthLabel>
           </MonthsContainer>
