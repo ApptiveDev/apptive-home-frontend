@@ -1,19 +1,21 @@
 import Container from '@/components/atoms/container/Container';
 import Image from '@/components/atoms/image/Image';
 import airplaneIcon from '@assets/icons/qna/airplane_icon_white.svg';
+import { forwardRef } from 'react';
 
 interface QnaProps {
   isOpen: boolean;
 }
 
-function QnaForm({isOpen}: QnaProps) {
+const QnaForm = forwardRef<HTMLDivElement, QnaProps>(({ isOpen }, ref) => {
   if (!isOpen) return null;
   return (
-    <Container size={{ width: '340px', height: '510px' }} direction='column' style={{
+    <div ref={ref}>
+       <Container size={{ width: '340px', height: '510px' }} direction='column' style={{
       width: '400px',
       backgroundColor: 'white',
       borderRadius: '32px',
-      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
       padding: '50px 30px',
       zIndex: 1000
       ,justifyContent: 'space-between',
@@ -73,7 +75,7 @@ function QnaForm({isOpen}: QnaProps) {
             <div style={{color:'#FC4F4F'}}>&nbsp;*</div>
           </Container>
           <Container direction="row" justify="center" style={{width:'100%'}}>
-            <button type="submit" style={{ width:'100%', height:'31px', backgroundColor:'#FF7F24', color:'white', borderRadius:'32px', border:'none', cursor:'pointer'}}>
+            <button type="submit" style={{ width:'100%', height:'34px', backgroundColor:'#FF7F24', color:'white', borderRadius:'32px', border:'none', cursor:'pointer'}}>
               <div style={{gap:'5px', width:'100%', height:'100%', display:'flex', padding:'1px', boxSizing:'border-box', justifyContent:'center', alignItems:'center', fontWeight:'700'}}>
                 <Image style={{ width: '15px' }} src={airplaneIcon} alt="airplane icon" />
                 문의하기
@@ -84,7 +86,9 @@ function QnaForm({isOpen}: QnaProps) {
      
       
     </Container>
+    </div>
+   
   );
-}
+})
 
 export default QnaForm;

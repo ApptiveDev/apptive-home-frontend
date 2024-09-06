@@ -14,10 +14,10 @@ function GalleryCard({ title, url, image }: GalleryCardProps) {
       direction="column"
       size={{ width: '460px', height: '390px' }}
       justify="space-between"
-      style={{ padding: '20px 20px' }}
+      style={{ padding: '20px 20px', boxSizing: 'border-box' }}
     >
       <Container
-        size={{ width: '460px', height: 'max-height' }}
+        size={{ width: '440px', height: 'max-height' }}
         align="flex-end"
         justify="space-between"
       >
