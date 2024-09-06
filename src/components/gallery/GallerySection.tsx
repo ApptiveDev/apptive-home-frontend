@@ -81,7 +81,7 @@ function GallerySection() {
   return (
     <Container size="full-width" justify="center">
       <GalleryContainer>
-        <Container size="full-width" justify="flex-end" padding="40px 0">
+        <Container size="full-width" justify="flex-end">
           <Heading.XLarge>APPTIVE Gallery</Heading.XLarge>
         </Container>
         <Container

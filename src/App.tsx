@@ -6,6 +6,7 @@ import GallerySection from './components/gallery/GallerySection';
 import Qna from './components/organisms/qna/Qna';
 
 function App() {
+
   return (
     <Page>
       <Qna />
