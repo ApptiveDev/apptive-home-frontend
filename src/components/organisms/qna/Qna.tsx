@@ -20,7 +20,7 @@ function Qna() {
       if (
         formRef.current &&
         !formRef.current.contains(event.target as Node) &&
-       
+        buttonRef.current &&
         !buttonRef.current.contains(event.target as Node)
       ) {
         setIsFormOpen(false);
