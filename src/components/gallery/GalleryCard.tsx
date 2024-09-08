@@ -8,7 +8,7 @@ interface GalleryCardProps {
   image: string;
 }
 
-function GalleryCard({ title, url, image }: GalleryCardProps) {
+function GalleryCard({ title, image }: GalleryCardProps) {
   return (
     <Container
       direction="column"
