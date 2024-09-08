@@ -1,30 +1,31 @@
-import Container from "@/components/atoms/container/Container";
-import Image from "@components/atoms/image/Image";
-import headerLogo from "@assets/images/header-logo.svg";
-import headerSmallLogo from "@assets/images/header-logo-small.svg";
-import linkIcon from "@assets/images/link-icon.svg";
-import { TextBody } from "@/components/atoms/text/TextFactory";
+import Container from '@/components/atoms/container/Container';
+import Image from '@components/atoms/image/Image';
+import headerLogo from '@assets/images/header-logo.svg';
+import headerSmallLogo from '@assets/images/header-logo-small.svg';
+import linkIcon from '@assets/images/link-icon.svg';
+import { TextBody } from '@/components/atoms/text/TextFactory';
+import { MAX_CONTENT_WIDTH } from '@styles/sizes';
 
 function Footer() {
   return (
     <Container
       size="full-width"
       justify="center"
-      style={{ backgroundColor: "#1B1B1B" }}
+      style={{ backgroundColor: '#1B1B1B' }}
     >
       <Container
-        size={{ width: "100%", height: "320px" }}
+        size={{ width: '100%', height: '320px' }}
         justify="space-between"
         align="center"
-        maxWidth="1210px"
-        padding="0 200px"
+        padding="0 40px"
+        maxWidth={MAX_CONTENT_WIDTH}
       >
         <Container
           gap="12px"
           direction="column"
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
           responsiveStyle={{
-            sm: { display: "flex" }, // xs 화면 이상에서는 숨김
+            sm: { display: 'flex' }, // xs 화면 이상에서는 숨김
           }}
         >
           <Image src={headerLogo} alt="header logo" />
@@ -41,8 +42,8 @@ function Footer() {
             gap="12px"
             direction="column"
             responsiveStyle={{
-              xs: { display: "flex" }, // xs 화면 이상에서는 숨김
-              sm: { display: "none" }, // xs 화면 이상에서는 숨김
+              xs: { display: 'flex' }, // xs 화면 이상에서는 숨김
+              sm: { display: 'none' }, // xs 화면 이상에서는 숨김
             }}
           >
             <Container gap="5px" direction="row" align="center">
@@ -55,7 +56,7 @@ function Footer() {
           <a
             rel="stylesheet"
             href=""
-            style={{ textDecoration: "underline", color: "white" }}
+            style={{ textDecoration: 'underline', color: 'white' }}
           >
             <Container gap="5px">
               Notion
@@ -65,7 +66,7 @@ function Footer() {
           <a
             rel="stylesheet"
             href=""
-            style={{ textDecoration: "underline", color: "white" }}
+            style={{ textDecoration: 'underline', color: 'white' }}
           >
             <Container gap="5px">
               Discord
@@ -75,7 +76,7 @@ function Footer() {
           <a
             rel="stylesheet"
             href=""
-            style={{ textDecoration: "underline", color: "white" }}
+            style={{ textDecoration: 'underline', color: 'white' }}
           >
             <Container gap="5px">
               Instagram
