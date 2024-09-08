@@ -1,6 +1,6 @@
 import Container from '@components/atoms/container/Container';
 import headerLogo from '@assets/images/header-logo.svg';
-import headerSmallLogo from '@assets/images/header-logo-small.svg';
+import headerSmallLogo from '/logo.svg';
 import { TextBody } from '@components/atoms/text/TextFactory';
 import { css } from '@emotion/react';
 import { BREAKPOINT_SM } from '@styles/breakpoints';

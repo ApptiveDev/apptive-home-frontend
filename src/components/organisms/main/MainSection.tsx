@@ -10,6 +10,8 @@ import {
 import styled from '@emotion/styled';
 import { colors } from '@/styles/colors';
 import { breakPoints } from '@/styles/breakpoints';
+import boyIntro from '@assets/images/main/boyIntro.png';
+import girlIntro from '@assets/images/main/girlIntro.png';
 
 interface MainSectionProps {
   mode: 'light' | 'dark';
@@ -83,7 +85,7 @@ const MainSection = ({ mode }: MainSectionProps) => {
       </TextBox>
       <Container>
         <Section>
-          <Image src="src/assets/images/main/boyIntro.png" alt="boyIntro" />
+          <Image src={boyIntro} alt="boyIntro" />
           <IntroText mode={mode}>
             2013년에 개설된 APPTIVE는 학과 및 학년 제한없이 서비스 제작과 창업에
             관심있는 분들과 함께합니다. 기획자, 개발자, 디자이너로 구성된 팀으로
@@ -97,7 +99,7 @@ const MainSection = ({ mode }: MainSectionProps) => {
             동문회에 속하게 됩니다. 이후에도 현직자 네트워킹, 연합동아리 활동,
             테크 세미나 참석 등 자유로운 동아리 활동이 가능합니다.
           </IntroText>
-          <Image src="src/assets/images/main/girlIntro.png" alt="girlIntro" />
+          <Image src={girlIntro} alt="girlIntro" />
         </SectionReversed>
       </Container>
       <TextBox>
