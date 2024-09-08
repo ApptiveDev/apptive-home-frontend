@@ -1,75 +1,75 @@
-import Container from "@/components/atoms/container/Container";
-import GalleryCard from "./GalleryCard";
-import { Heading } from "@/components/atoms/text/TextFactory";
-import { MAX_CONTENT_WIDTH } from "@/styles/sizes";
-import { ReactNode } from "react";
+import Container from '@/components/atoms/container/Container';
+import GalleryCard from './GalleryCard';
+import { Heading } from '@/components/atoms/text/TextFactory';
+import { MAX_CONTENT_WIDTH } from '@/styles/sizes';
+import { ReactNode } from 'react';
 
-import image1 from "@/assets/images/sample/image-1.png";
-import image2 from "@/assets/images/sample/image-2.png";
-import image3 from "@/assets/images/sample/image-3.png";
-import image4 from "@/assets/images/sample/image-4.png";
-import image5 from "@/assets/images/sample/image-5.png";
-import image6 from "@/assets/images/sample/image-6.png";
-import image7 from "@/assets/images/sample/image-7.png";
-import image8 from "@/assets/images/sample/image-8.png";
-import image9 from "@/assets/images/sample/image-9.png";
-import image10 from "@/assets/images/sample/image-10.png";
-import image11 from "@/assets/images/sample/image-11.png";
+import image1 from '@assets/images/sample/image-1.png';
+import image2 from '@assets/images/sample/image-2.png';
+import image3 from '@assets/images/sample/image-3.png';
+import image4 from '@assets/images/sample/image-4.png';
+import image5 from '@assets/images/sample/image-5.png';
+import image6 from '@assets/images/sample/image-6.png';
+import image7 from '@assets/images/sample/image-7.png';
+import image8 from '@assets/images/sample/image-8.png';
+import image9 from '@assets/images/sample/image-9.png';
+import image10 from '@assets/images/sample/image-10.png';
+import image11 from '@assets/images/sample/image-11.png';
 
 const cardData = [
   {
-    title: "2024-1 APPTIVE X WAP<br/>연합 해커톤",
-    url: "",
+    title: '2024-1 APPTIVE X WAP<br/>연합 해커톤',
+    url: '',
     image: image1,
   },
   {
-    title: "2024-1 아이디어톤 / 팀빌딩",
-    url: "",
+    title: '2024-1 아이디어톤 / 팀빌딩',
+    url: '',
     image: image2,
   },
   {
-    title: "2024-1 MT",
-    url: "",
+    title: '2024-1 MT',
+    url: '',
     image: image3,
   },
   {
-    title: "2024-1 현직자 간담회",
-    url: "",
+    title: '2024-1 현직자 간담회',
+    url: '',
     image: image4,
   },
   {
-    title: "2024-1 정기 세미나",
-    url: "",
+    title: '2024-1 정기 세미나',
+    url: '',
     image: image5,
   },
   {
-    title: "2024-1 협업툴 워크샵",
-    url: "",
+    title: '2024-1 협업툴 워크샵',
+    url: '',
     image: image6,
   },
   {
-    title: "2024-1 신입기수 오리엔테이션",
-    url: "",
+    title: '2024-1 신입기수 오리엔테이션',
+    url: '',
     image: image7,
   },
   {
-    title: "2024-1 아카데미 학군별 스터디",
-    url: "",
+    title: '2024-1 아카데미 학군별 스터디',
+    url: '',
     image: image8,
   },
   {
-    title: "2024-1 부산 연합동아리<br/>네트워킹",
-    url: "",
+    title: '2024-1 부산 연합동아리<br/>네트워킹',
+    url: '',
     image: image9,
   },
   {
-    title: "2024-1 OT&데모데이",
-    url: "",
+    title: '2024-1 OT&데모데이',
+    url: '',
     image: image10,
   },
   {
-    title: "2023-1 홈커밍데이",
-    url: "",
+    title: '2023-1 홈커밍데이',
+    url: '',
     image: image11,
   },
 ];
@@ -89,8 +89,10 @@ function GallerySection() {
           size="full-width"
           justify="center"
           align="center"
+          gap="32px"
+          padding="20px 0"
           responsiveStyle={{
-            md: { display: "none" }, // sm 화면 이상에서는 숨김
+            md: { display: 'none' }, // sm 화면 이상에서는 숨김
           }}
         >
           {cardData.map((card) => (
@@ -98,12 +100,13 @@ function GallerySection() {
           ))}
         </Container>
         <Container
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
           responsiveStyle={{
-            md: { display: "flex" }, // sm 화면 이상에서는 보임
+            md: { display: 'flex' }, // sm 화면 이상에서는 보임
           }}
+          gap="32px"
         >
-          <Container direction="column">
+          <Container direction="column" gap="32px">
             {evenIndexCards.map((card) => (
               <GalleryCard
                 title={card.title}
@@ -112,7 +115,7 @@ function GallerySection() {
               />
             ))}
           </Container>
-          <Container direction="column" padding="230px 0 0 0 ">
+          <Container direction="column" gap="32px" padding="230px 0 0 0 ">
             {oddIndexCards.map((card) => (
               <GalleryCard
                 title={card.title}
@@ -133,12 +136,13 @@ function GalleryContainer({ children }: ActivityContainerProps) {
       size="full-width"
       maxWidth={MAX_CONTENT_WIDTH}
       direction="column"
+      align="center"
       padding="20px"
       style={{
-        padding: "50px 20px",
+        padding: '50px 20px',
       }}
       responsiveStyle={{
-        lg: { padding: "100px 20px" },
+        lg: { padding: '100px 20px' },
       }}
     >
       {children}

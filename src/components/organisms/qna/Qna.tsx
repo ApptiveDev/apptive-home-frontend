@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import FloatingButton from "./FloatingButton";
-import QnaForm from "./QnaForm";
-import { MAX_CONTENT_WIDTH } from '@styles/sizes';
-import Container from "@/components/atoms/container/Container";
+import { useEffect, useRef, useState } from 'react';
+import FloatingButton from './FloatingButton';
+import QnaForm from './QnaForm';
+import Container from '@components/atoms/container/Container';
 
 function Qna() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -27,41 +26,45 @@ function Qna() {
       }
     };
 
-    // 클릭 이벤트 리스너 추가
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      // 컴포넌트 언마운트 시 이벤트 리스너 제거
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [formRef, buttonRef]);
 
   return (
     <Container
       size="full-width"
-      maxWidth={MAX_CONTENT_WIDTH}
       direction="column"
-      padding="20px"
       style={{
-        padding: '50px 0',
-        position:'fixed',
-        alignItems:'end',
-        display:'flex',flexDirection:'column', right:'30px',bottom:'10px', 
-        zIndex:1000
-      }}
-      responsiveStyle={{
-        sm: { padding: '50px 5%' },
+        position: 'fixed',
+        bottom: '10px',
+        zIndex: 1000,
       }}
     >
-      <div 
-      
-      style={{display:'flex',flexDirection:'column', alignItems:'end',bottom:'10px', gap:'10px',zIndex:1000}}>
-        <QnaForm ref={formRef} isOpen={isFormOpen}/>
-        <FloatingButton ref={buttonRef} isOpen={isFormOpen} onClick={handleButtonClick} />
-      </div>
+      <Container
+        size="full-width"
+        justify="flex-end"
+      >
+        <Container
+          align="flex-end"
+          direction="column"
+          padding="50px 20px"
+          size="full-width"
+          style={{
+            bottom: '10px',
+            gap: '10px',
+            zIndex: 1000,
+          }}
+        >
+          <QnaForm ref={formRef} isOpen={isFormOpen}/>
+          <FloatingButton ref={buttonRef} isOpen={isFormOpen} onClick={handleButtonClick}/>
+        </Container>
+      </Container>
     </Container>
-    
- 
-  )  
+
+  );
 }
+
 export default Qna;
