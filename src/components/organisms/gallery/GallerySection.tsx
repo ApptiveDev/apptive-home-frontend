@@ -4,17 +4,17 @@ import { Heading } from '@/components/atoms/text/TextFactory';
 import { MAX_CONTENT_WIDTH } from '@/styles/sizes';
 import { ReactNode } from 'react';
 
-import image1 from '@/assets/images/sample/image-1.png';
-import image2 from '@/assets/images/sample/image-2.png';
-import image3 from '@/assets/images/sample/image-3.png';
-import image4 from '@/assets/images/sample/image-4.png';
-import image5 from '@/assets/images/sample/image-5.png';
-import image6 from '@/assets/images/sample/image-6.png';
-import image7 from '@/assets/images/sample/image-7.png';
-import image8 from '@/assets/images/sample/image-8.png';
-import image9 from '@/assets/images/sample/image-9.png';
-import image10 from '@/assets/images/sample/image-10.png';
-import image11 from '@/assets/images/sample/image-11.png';
+import image1 from '@assets/images/sample/image-1.png';
+import image2 from '@assets/images/sample/image-2.png';
+import image3 from '@assets/images/sample/image-3.png';
+import image4 from '@assets/images/sample/image-4.png';
+import image5 from '@assets/images/sample/image-5.png';
+import image6 from '@assets/images/sample/image-6.png';
+import image7 from '@assets/images/sample/image-7.png';
+import image8 from '@assets/images/sample/image-8.png';
+import image9 from '@assets/images/sample/image-9.png';
+import image10 from '@assets/images/sample/image-10.png';
+import image11 from '@assets/images/sample/image-11.png';
 
 const cardData = [
   {
@@ -81,7 +81,7 @@ function GallerySection() {
   return (
     <Container size="full-width" justify="center">
       <GalleryContainer>
-        <Container size="full-width" justify="flex-end" padding="40px 0">
+        <Container size="full-width" justify="flex-end">
           <Heading.XLarge>APPTIVE Gallery</Heading.XLarge>
         </Container>
         <Container
@@ -89,6 +89,8 @@ function GallerySection() {
           size="full-width"
           justify="center"
           align="center"
+          gap="32px"
+          padding="20px 0"
           responsiveStyle={{
             md: { display: 'none' }, // sm 화면 이상에서는 숨김
           }}
@@ -98,12 +100,13 @@ function GallerySection() {
           ))}
         </Container>
         <Container
+          style={{ display: 'none' }}
           responsiveStyle={{
-            xs: { display: 'none' }, // xs 화면 이상에서는 숨김
             md: { display: 'flex' }, // sm 화면 이상에서는 보임
           }}
+          gap="32px"
         >
-          <Container direction="column">
+          <Container direction="column" gap="32px">
             {evenIndexCards.map((card) => (
               <GalleryCard
                 title={card.title}
@@ -112,7 +115,7 @@ function GallerySection() {
               />
             ))}
           </Container>
-          <Container direction="column" padding="230px 0 0 0 ">
+          <Container direction="column" gap="32px" padding="230px 0 0 0 ">
             {oddIndexCards.map((card) => (
               <GalleryCard
                 title={card.title}
@@ -133,6 +136,7 @@ function GalleryContainer({ children }: ActivityContainerProps) {
       size="full-width"
       maxWidth={MAX_CONTENT_WIDTH}
       direction="column"
+      align="center"
       padding="20px"
       style={{
         padding: '50px 20px',
