@@ -1,7 +1,7 @@
 import Container from '@/components/atoms/container/Container';
 import Image from '@components/atoms/image/Image';
 import headerLogo from '@assets/images/header-logo.svg';
-import headerSmallLogo from '@assets/images/header-logo-small.svg';
+import smallLogo from '/logo.svg';
 import linkIcon from '@assets/images/link-icon.svg';
 import { TextBody } from '@/components/atoms/text/TextFactory';
 import { MAX_CONTENT_WIDTH } from '@styles/sizes';
@@ -50,7 +50,7 @@ function Footer() {
               <TextBody.Large weight="bold" color="white">
                 APPTIVE
               </TextBody.Large>
-              <Image src={headerSmallLogo} alt="header small logo" />
+              <Image src={smallLogo} alt="header small logo" />
             </Container>
           </Container>
           <a
