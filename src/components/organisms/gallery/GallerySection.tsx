@@ -89,7 +89,7 @@ function GallerySection() {
           size="full-width"
           justify="center"
           align="center"
-          gap="32px"
+          gap="40px"
           padding="20px 0"
           responsiveStyle={{
             md: { display: 'none' }, // sm 화면 이상에서는 숨김
@@ -106,7 +106,7 @@ function GallerySection() {
           }}
           gap="32px"
         >
-          <Container direction="column" gap="32px">
+          <Container direction="column" gap="60px">
             {evenIndexCards.map((card) => (
               <GalleryCard
                 title={card.title}

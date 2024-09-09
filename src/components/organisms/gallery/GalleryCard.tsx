@@ -22,6 +22,7 @@ function GalleryCard({ title, image }: GalleryCardProps) {
         size="full-width"
         direction="column"
         align="center"
+        gap={9}
       >
         <Container
           size="full-width"
