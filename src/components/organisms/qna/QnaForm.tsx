@@ -43,8 +43,8 @@ const QnaForm = forwardRef<HTMLDivElement, QnaProps>(({ isOpen }, ref) => {
                 <label htmlFor="name" style={{ fontSize:'17px', fontWeight:'700' }} >이름</label>
                 <div style={{ color:'#FC4F4F' }}>&nbsp;*</div>
               </Container>
-              <div style={{ border:'1px solid #B2B6BB', borderRadius:'15px', flexDirection:'row', padding:'5px 10px', boxSizing:'border-box', width:'100%' }}>
-                <input type="text" id="name" name='name' placeholder='이름을 입력해주세요.' style={{ border: 'none', outline: 'none', width:'100%' }} required/>
+              <div style={{ border:'1px solid #B2B6BB', borderRadius:'15px', flexDirection:'row', padding:'5px 15px', boxSizing:'border-box', width:'100%' }}>
+                <input type="text" id="name" name='name' placeholder='이름을 입력해주세요.' style={{ border: 'none', backgroundColor:'transparent',outline: 'none', width:'100%'}} required/>
               </div>
             </Container>
             <Container direction="column" gap="10px">
@@ -53,7 +53,7 @@ const QnaForm = forwardRef<HTMLDivElement, QnaProps>(({ isOpen }, ref) => {
                 <div style={{ color:'#FC4F4F' }}>&nbsp;*</div>
               </Container>
               <div style={{ border:'1px solid #B2B6BB', borderRadius:'15px', flexDirection:'row', padding:'5px 10px', boxSizing:'border-box', width:'100%' }}>
-                <input type="text" id="email" name='email' placeholder='답변을 받으실 이메일 주소를 입력해주세요.' style={{ border: 'none', outline: 'none', width:'100%' }} required></input>
+                <input type="text" id="email" name='email' placeholder='답변을 받으실 이메일 주소를 입력해주세요.' style={{ border: 'none', backgroundColor:'transparent', outline: 'none', width:'100%' }} required></input>
               </div>
             </Container>
             <Container direction="column" gap="10px">
@@ -62,7 +62,7 @@ const QnaForm = forwardRef<HTMLDivElement, QnaProps>(({ isOpen }, ref) => {
                 <div style={{ color:'#FC4F4F' }}>&nbsp;*</div>
               </Container>
               <div style={{ border:'1px solid #B2B6BB', borderRadius:'15px', flexDirection:'row', padding:'5px 10px', boxSizing:'border-box', width:'100%' }}>
-                <select id="category" name='category' style={{ border: 'none', outline: 'none', width: '100%', height:'100%' }} required>
+                <select id="category" name='category' style={{ border: 'none', backgroundColor:'transparent', outline: 'none', width: '100%', height:'100%' }} required>
                   <option value="" style={{ color:'#B2B6BB' }} disabled selected hidden>문의 내용의 카테고리를 골라주세요(더 빠른 답변 받기 가능).</option>
                   <option value="1">동아리 모집</option>
                   <option value="2">동아리 행사 문의</option>
@@ -76,7 +76,7 @@ const QnaForm = forwardRef<HTMLDivElement, QnaProps>(({ isOpen }, ref) => {
                 <div style={{ color:'#FC4F4F' }}>&nbsp;*</div>
               </Container>
               <div style={{ border:'1px solid #B2B6BB', borderRadius:'15px', flexDirection:'row', padding:'6px 10px', boxSizing:'border-box', width:'100%', height:'100%' }}>
-                <textarea id="content" name='content' rows={4} placeholder='상세한 내용을 적어주세요.' style={{ resize:'none', border: 'none', outline: 'none', width:'98%', height:'92%', textAlign:'start' }} required/>
+                <textarea id="content" name='content' rows={4} placeholder='상세한 내용을 적어주세요.' style={{ resize:'none', border: 'none', backgroundColor:'transparent', outline: 'none', width:'98%', height:'92%', textAlign:'start' }} required/>
               </div>
             </Container>
             <Container direction="row" justify="center" align='center' style={{ width:'100%' }}>
