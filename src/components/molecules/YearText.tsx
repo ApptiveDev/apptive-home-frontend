@@ -39,8 +39,7 @@ const SliderWrapper = styled.div<ModeProps>`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 20px;
-  margin-bottom: 150px;
+  margin: 20px 20px 150px;
   overflow: hidden;
   background-color: ${({ mode }) => colors[mode].background.main};
 
@@ -63,6 +62,7 @@ const SliderWrapper = styled.div<ModeProps>`
 const SliderContainer = styled.div`
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-left: 45px;
   gap: 15px;
   ::-webkit-scrollbar {
