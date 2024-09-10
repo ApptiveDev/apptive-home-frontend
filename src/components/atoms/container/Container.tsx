@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { css, CSSObject } from '@emotion/react';
+import { forwardRef, ReactNode } from 'react';
+import { CSSObject } from '@emotion/react';
 import { ResponsiveCSSObjects } from '@/types/styles';
 import { serializeResponsiveCss } from '@/utils';
 
@@ -16,18 +16,21 @@ interface ContainerProps {
   responsiveStyle?: ResponsiveCSSObjects;
 }
 
-function Container({
-  children,
-  direction = 'row',
-  justify = 'flex-start',
-  align = 'flex-start',
-  size,
-  maxWidth,
-  padding,
-  gap = 0,
-  style,
-  responsiveStyle,
-}: ContainerProps) {
+const Container = forwardRef<HTMLDivElement, ContainerProps>((
+  {
+    children,
+    direction = 'row',
+    justify = 'flex-start',
+    align = 'flex-start',
+    size,
+    maxWidth,
+    padding,
+    gap = 0,
+    style,
+    responsiveStyle,
+  }: ContainerProps,
+  ref,
+) => {
   const fixedSize = getFixedSize(size);
   const containerStyle: CSSObject = {
     display: 'flex',
@@ -42,9 +45,11 @@ function Container({
   };
 
   return (
-    <div css={[css(containerStyle), css(style), serializeResponsiveCss(responsiveStyle)]}>{children}</div>
+    <div ref={ref} css={[containerStyle, style, serializeResponsiveCss(responsiveStyle)]}>
+      {children}
+    </div>
   );
-}
+});
 
 function getFixedSize(size?: ContainerSize) {
   if (! size) {
