@@ -1,10 +1,23 @@
-import { css, SerializedStyles } from '@emotion/react';
+import { css, keyframes, SerializedStyles } from '@emotion/react';
 import { breakPoints } from '@styles/breakpoints';
 import {
   ResponsiveColumns,
   ResponsiveCSSObjects,
   ScreenSize,
 } from '@/types/styles';
+
+export function getLandingKeyframes(reverse: boolean = false, fromY: string = '20px') {
+  return keyframes`
+    from {
+      transform: translateY(${reverse ? `-${fromY}` : fromY});
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  `;
+}
 
 export function serializeResponsiveCss(sizes?: ResponsiveCSSObjects): SerializedStyles {
   if (! sizes) {

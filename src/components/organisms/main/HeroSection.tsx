@@ -2,10 +2,10 @@ import Container from '@components/atoms/container/Container';
 import { Heading, TextBody } from '@components/atoms/text/TextFactory';
 import Text from '@components/atoms/text/Text';
 import Button from '@components/atoms/button/Button';
-import { keyframes } from '@emotion/react';
 import { ReactNode } from 'react';
 import backgroundImage from '@assets/images/hero-background.webp';
 import usePreloadBackground from '@/hooks/usePreloadBackground';
+import { getLandingKeyframes } from '@/utils';
 
 function HeroSection() {
   return (
@@ -76,19 +76,6 @@ function HeroText() {
       APPTIVE
     </Text>
   );
-}
-
-function getLandingKeyframes(reverse: boolean = false) {
-  return keyframes`
-    from {
-      transform: translateY(${reverse ? '-20px' : '20px'});
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  `;
 }
 
 export default HeroSection;
