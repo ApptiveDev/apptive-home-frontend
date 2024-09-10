@@ -12,6 +12,9 @@ import { colors } from '@/styles/colors';
 import { breakPoints } from '@/styles/breakpoints';
 import boyIntro from '@assets/images/main/boyIntro.png';
 import girlIntro from '@assets/images/main/girlIntro.png';
+import Container from '@components/atoms/container/Container';
+import { ReactNode } from 'react';
+import { MAX_CONTENT_WIDTH } from '@styles/sizes';
 
 interface MainSectionProps {
   mode: 'light' | 'dark';
@@ -28,13 +31,6 @@ const MainSection = ({ mode }: MainSectionProps) => {
     background: ${colorScheme.background.main};
     padding: 0 35px;
   `;
-  const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    max-width: 1000px;
-    width: 100%;
-  `;
   const Section = styled.div`
     display: flex;
     align-items: center;
@@ -47,12 +43,16 @@ const MainSection = ({ mode }: MainSectionProps) => {
     }
   `;
   const TextBox = styled.div`
-    margin-top: 200px;
+    margin-top: 80px;
     margin-bottom: 50px;
     display: flex;
-    max-width: 1000px;
+    max-width: ${MAX_CONTENT_WIDTH};
     width: 100%;
     text-align: left;
+    @media (min-width: ${breakPoints.sm}) {
+      margin-top: 200px;
+      margin-bottom: 50px;
+    }
   `;
   const Image = styled.img`
     width: 250px;
@@ -83,7 +83,7 @@ const MainSection = ({ mode }: MainSectionProps) => {
           What is Apptive?
         </Heading.XLarge>
       </TextBox>
-      <Container>
+      <MainTitleContainer>
         <Section>
           <Image src={boyIntro} alt="boyIntro" />
           <IntroText mode={mode}>
@@ -101,7 +101,7 @@ const MainSection = ({ mode }: MainSectionProps) => {
           </IntroText>
           <Image src={girlIntro} alt="girlIntro" />
         </SectionReversed>
-      </Container>
+      </MainTitleContainer>
       <TextBox>
         <Heading.XLarge color={colorScheme.text.prominent}>
           Years of Apptive
@@ -288,5 +288,18 @@ const MainSection = ({ mode }: MainSectionProps) => {
     </Wrapper>
   );
 };
+
+function MainTitleContainer({ children }: { children: ReactNode }) {
+  return (
+    <Container
+      direction="column"
+      gap="60px"
+      maxWidth={MAX_CONTENT_WIDTH}
+      size="full-width"
+    >
+      {children}
+    </Container>
+  );
+}
 
 export default MainSection;
