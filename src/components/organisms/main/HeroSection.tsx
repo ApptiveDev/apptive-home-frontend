@@ -15,7 +15,7 @@ function HeroSection() {
           <Heading.XSmall
             css={{
               opacity: 0,
-              animation: `${getLandingKeyframes(true)} 0.5s ease-in-out forwards 0.5s`,
+              animation: `${getLandingKeyframes(true)} 0.5s ease-in-out forwards 1s`,
             }}
           >
             부산대학교 대표 IT 프로젝트 동아리
@@ -26,7 +26,7 @@ function HeroSection() {
             css={{
               marginTop: '15px',
               opacity: 0,
-              animation: `${getLandingKeyframes()} 0.5s ease-in-out forwards 0.5s`,
+              animation: `${getLandingKeyframes()} 0.5s ease-in-out forwards 1s`,
             }}
           >
             <TextBody.Large weight="bold">
@@ -70,7 +70,7 @@ function HeroText() {
       }}
       css={{
         opacity: 0,
-        animation: `${getLandingKeyframes()} 0.5s ease-in-out forwards 0s`,
+        animation: `${getLandingKeyframes()} 0.5s ease-in-out forwards 0.5s`,
       }}
     >
       APPTIVE
