@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
 interface UseInViewProps {
   ref: RefObject<HTMLElement>;
@@ -7,26 +7,23 @@ interface UseInViewProps {
 
 function useInView({ ref, threshold }: UseInViewProps) {
   const [inView, setInView] = useState(false);
-  useEffect(() => {
-    if (! ref.current)
-      return;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        setInView((prevState) => {
-          if (prevState === entry.isIntersecting)
-            return prevState;
+  const observerRef = useRef(new IntersectionObserver(([entry]) => {
+    setInView(entry.isIntersecting);
+  }, {
+    threshold: threshold,
+  }));
 
-          return entry.isIntersecting;
-        });
-      });
-    }, {
-      threshold: threshold,
-    });
-    observer.observe(ref.current);
+  useEffect(() => {
+    if (! ref.current || !observerRef.current)
+      return;
+    observerRef.current.observe(ref.current);
 
     return () => {
-      observer.disconnect();
+      if (ref.current) {
+        observerRef.current.unobserve(ref.current);
+      }
     };
+
   }, [ref]);
 
   return { inView };
