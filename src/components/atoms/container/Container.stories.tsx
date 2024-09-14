@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Container from '@components/atoms/container/Container';
 import Grid from '@components/atoms/grid/Grid';
+import useInView from '@/hooks/useInView';
+import { useEffect, useRef } from 'react';
 
 const meta: Meta<typeof Container> = {
   component: Container,
@@ -33,6 +35,37 @@ const GridContent = () => (
     <div style={{ background: '#e0e0e0', padding: '20px' }}>Grid Item</div>
   </Grid>
 );
+
+const ContainerSpy = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { inView } = useInView({ ref, threshold: 0.8 });
+  useEffect(() => {
+    console.log(inView);
+  }, [inView]);
+  return (
+    <Container size={{
+      width: '100%',
+      height: '1000px',
+    }}>
+      <div ref={ref} />
+    </Container>
+  );
+};
+
+export const UseInViewContainer: Story = {
+  args: {
+    direction: 'column',
+    justify: 'center',
+    align: 'center',
+    gap: 20,
+    style: {
+      border: '1px solid #ccc',
+      padding: '20px',
+      minHeight: '400px',
+    },
+    children: <ContainerSpy />,
+  },
+};
 
 export const DefaultLayout: Story = {
   args: {
