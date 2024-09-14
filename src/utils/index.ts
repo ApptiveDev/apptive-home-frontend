@@ -6,6 +6,19 @@ import {
   ScreenSize,
 } from '@/types/styles';
 
+export function getLandingKeyframesArray(reverse: boolean = false, fromY: string = '20px') {
+  return [
+    {
+      transform: `translateY(${reverse ? `-${fromY}` : fromY})`,
+      opacity: 0,
+    },
+    {
+      transform: 'translateY(0)',
+      opacity: 1,
+    },
+  ];
+}
+
 export function getLandingKeyframes(reverse: boolean = false, fromY: string = '20px') {
   return keyframes`
     from {
