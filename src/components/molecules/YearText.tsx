@@ -31,60 +31,6 @@ const YearText = styled.div<ModeProps>`
   }
 `;
 
-const SliderWrapper = styled.div<ModeProps>`
-  display: flex;
-  padding-left: 45px;
-  padding-right: 45px;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 20px 20px 150px;
-  overflow: hidden;
-  background-color: ${({ mode }) => colors[mode].background.main};
-
-  @media (max-width: ${breakPoints.md}) {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  @media (max-width: ${breakPoints.sm}) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  @media (max-width: ${breakPoints.xs}) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-`;
-
-const SliderContainer = styled.div`
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-left: 45px;
-  gap: 15px;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (max-width: ${breakPoints.md}) {
-    padding-left: 30px;
-    gap: 10px;
-  }
-
-  @media (max-width: ${breakPoints.sm}) {
-    padding-left: 20px;
-    gap: 8px;
-  }
-
-  @media (max-width: ${breakPoints.xs}) {
-    padding-left: 10px;
-    gap: 5px;
-  }
-`;
-
 const YearTextBox = styled.div<ModeProps>`
   position: relative;
   flex: 0 0 auto;
@@ -142,4 +88,4 @@ const ExplainText = styled.div<ModeProps>`
   }
 `;
 
-export { YearText, ExplainText, SliderWrapper, SliderContainer, YearTextBox };
+export { YearText, ExplainText, YearTextBox };
