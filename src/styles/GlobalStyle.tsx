@@ -9,7 +9,27 @@ const baseStyle = css`
   }
   body {
     font-family: 'Pretendard Variable', sans-serif;
+    overflow-y: scroll;
   }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(25, 27, 28);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255);
+  }
+
+  body {
+    scrollbar-color: rgba(25, 27, 28) rgba(255, 255, 255);
+    scrollbar-width: thin; 
+  }
+
 `;
 
 function GlobalStyle() {
