@@ -12,10 +12,11 @@ import useIntersectionSlideEffect from '@/hooks/useIntersectionSlideEffect';
 import YearlySection from '@components/organisms/main/YearlySection';
 
 interface MainSectionProps {
+  id?: string;
   mode: 'light' | 'dark';
 }
 
-const MainSection = ({ mode }: MainSectionProps) => {
+const MainSection = ({ id, mode }: MainSectionProps) => {
   const colorScheme = colors[mode];
 
   const spyRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,8 @@ const MainSection = ({ mode }: MainSectionProps) => {
   useIntersectionSlideEffect({ spyRef, targetRef: girlIntroRef, delay: 600 });
 
   return (
+    <section id={id}> 
+    
     <Container
       padding="0 35px"
       style={{ backgroundColor: colorScheme.background.main }}
@@ -69,7 +72,7 @@ const MainSection = ({ mode }: MainSectionProps) => {
         </SectionReversed>
       </MainTitleContainer>
       <YearlySection mode={mode} />
-    </Container>
+    </Container></section>
   );
 };
 

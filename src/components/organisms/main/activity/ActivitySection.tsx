@@ -6,9 +6,10 @@ import { ReactNode } from 'react';
 import ActivityCardSection from '@components/organisms/main/activity/ActivityCardSection';
 import ActivityTimelineSection from './ActivityTimelineSection';
 
-function ActivitySection() {
+function ActivitySection({ id }: { id?: string }) {
   return (
-    <Container
+    <section id={id}>
+      <Container
       size="full-width"
       justify="center"
       style={{
@@ -30,6 +31,8 @@ function ActivitySection() {
         </Container>
       </ActivityContainer>
     </Container>
+    </section>
+    
   );
 }
 

@@ -77,9 +77,10 @@ const cardData = [
 const evenIndexCards = cardData.filter((_, index) => index % 2 === 0);
 const oddIndexCards = cardData.filter((_, index) => index % 2 !== 0);
 
-function GallerySection() {
+function GallerySection({ id }: { id?: string }) {
   return (
-    <Container size="full-width" justify="center">
+    <section id={id}>
+      <Container size="full-width" justify="center">
       <GalleryContainer>
         <Container size="full-width" justify="flex-end">
           <Heading.XLarge>APPTIVE Gallery</Heading.XLarge>
@@ -127,6 +128,8 @@ function GallerySection() {
         </Container>
       </GalleryContainer>
     </Container>
+    </section>
+    
   );
 }
 

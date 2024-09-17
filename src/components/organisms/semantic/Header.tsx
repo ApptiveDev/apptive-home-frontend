@@ -13,6 +13,12 @@ function Header() {
     transition: all 0.15s ease-in;
     z-index: 1000;
   `;
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   return (
     <Container
@@ -34,9 +40,9 @@ function Header() {
           },
         }}
         >
-          <TextBody.Medium weight="bold">About</TextBody.Medium>
-          <TextBody.Medium weight="bold">Activity</TextBody.Medium>
-          <TextBody.Medium weight="bold">Gallery</TextBody.Medium>
+          <TextBody.Medium weight="bold" style={{cursor:"pointer"}} onClick={() => scrollToSection('main-section')}>About</TextBody.Medium>
+          <TextBody.Medium weight="bold" style={{cursor:"pointer"}} onClick={() => scrollToSection('activity-section')}>Activity</TextBody.Medium>
+          <TextBody.Medium weight="bold" style={{cursor:"pointer"}} onClick={() => scrollToSection('gallery-section')}>Gallery</TextBody.Medium>
         </Container>
       </Container>
 

@@ -7,8 +7,10 @@ import backgroundImage from '@assets/images/hero-background.webp';
 import usePreloadBackground from '@/hooks/usePreloadBackground';
 import { getLandingKeyframes } from '@/utils';
 
-function HeroSection() {
+function HeroSection({ id }: { id?: string }) {
   return (
+    <section id={id}>
+      
     <HeroContainer>
       <Container size="full-width" maxWidth="1210px" justify="center">
         <Container direction="column" align="center">
@@ -35,7 +37,7 @@ function HeroSection() {
           </Button>
         </Container>
       </Container>
-    </HeroContainer>
+    </HeroContainer></section>
   );
 }
 
