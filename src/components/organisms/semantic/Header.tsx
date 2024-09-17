@@ -5,6 +5,7 @@ import { TextBody } from '@components/atoms/text/TextFactory';
 import { css } from '@emotion/react';
 import { BREAKPOINT_SM } from '@styles/breakpoints';
 import useHeaderScrollEffect from '@/hooks/useHeaderScrollEffect';
+import useSmoothScroll from '@/hooks/useSmoothScroll';
 
 function Header() {
   const { headerStyle: scrollHeaderStyle } = useHeaderScrollEffect();
@@ -16,7 +17,8 @@ function Header() {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const targetPosition = section.getBoundingClientRect().top + window.scrollY;
+      useSmoothScroll(targetPosition);
     }
   };
 
