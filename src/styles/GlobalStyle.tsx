@@ -9,8 +9,6 @@ const baseStyle = css`
   }
   body {
     font-family: 'Pretendard Variable', sans-serif;
-    scrollbar-color: rgba(25, 27, 28) rgba(255, 255, 255);
-    scrollbar-width: thin; 
   }
 
   ::-webkit-scrollbar {
