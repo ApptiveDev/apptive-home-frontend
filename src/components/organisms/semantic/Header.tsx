@@ -13,6 +13,12 @@ function Header() {
     transition: all 0.15s ease-in;
     z-index: 1000;
   `;
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <Container
@@ -34,9 +40,9 @@ function Header() {
           },
         }}
         >
-          <TextBody.Medium weight="bold">About</TextBody.Medium>
-          <TextBody.Medium weight="bold">Activity</TextBody.Medium>
-          <TextBody.Medium weight="bold">Gallery</TextBody.Medium>
+          <TextBody.Medium weight="bold" style={{ cursor:'pointer' }} onClick={() => scrollToSection('main-section')}>About</TextBody.Medium>
+          <TextBody.Medium weight="bold" style={{ cursor:'pointer' }} onClick={() => scrollToSection('activity-section')}>Activity</TextBody.Medium>
+          <TextBody.Medium weight="bold" style={{ cursor:'pointer' }} onClick={() => scrollToSection('gallery-section')}>Gallery</TextBody.Medium>
         </Container>
       </Container>
 
@@ -45,17 +51,20 @@ function Header() {
 }
 
 const ResponsiveLogo = () => (
-  <Container style={css`
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(${headerSmallLogo});
-    @media (min-width: ${BREAKPOINT_SM}) {
-      width: 160px;
-      background-image: url(${headerLogo});
-    }
-  `}
+  <div
+    css={css`
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: pointer;
+      background-image: url(${headerSmallLogo});
+      @media (min-width: ${BREAKPOINT_SM}) {
+        width: 160px;
+        background-image: url(${headerLogo});
+      }
+    `}
+    onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
   />
 );
 

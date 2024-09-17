@@ -10,10 +10,10 @@ function App() {
   return (
     <Page>
       <Qna />
-      <HeroSection />
-      <MainSection mode="dark" />
-      <ActivitySection />
-      <GallerySection />
+      <HeroSection id="hero-section" /> 
+      <MainSection id="main-section" mode="dark" />
+      <ActivitySection id="activity-section" />
+      <GallerySection id="gallery-section" />
     </Page>
   );
 }

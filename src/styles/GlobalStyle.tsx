@@ -10,6 +10,20 @@ const baseStyle = css`
   body {
     font-family: 'Pretendard Variable', sans-serif;
   }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(25, 27, 28);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255);
+  }
+
 `;
 
 function GlobalStyle() {

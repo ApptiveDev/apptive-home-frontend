@@ -44,7 +44,7 @@ const QnaForm = forwardRef<HTMLDivElement, QnaProps>(({ isOpen }, ref) => {
                 <div style={{ color:'#FC4F4F' }}>&nbsp;*</div>
               </Container>
               <div style={{ border:'1px solid #B2B6BB', borderRadius:'15px', flexDirection:'row', padding:'5px 15px', boxSizing:'border-box', width:'100%' }}>
-                <input type="text" id="name" name='name' placeholder='이름을 입력해주세요.' style={{ border: 'none', backgroundColor:'transparent',outline: 'none', width:'100%'}} required/>
+                <input type="text" id="name" name='name' placeholder='이름을 입력해주세요.' style={{ border: 'none', backgroundColor:'transparent', outline: 'none', width:'100%' }} required/>
               </div>
             </Container>
             <Container direction="column" gap="10px">

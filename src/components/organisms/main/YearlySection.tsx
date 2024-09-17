@@ -74,30 +74,31 @@ function YearlySection({ mode }: YearlySectionProps) {
 const SliderContainer =
   forwardRef<HTMLDivElement, { children?: ReactNode }>(({ children }, ref) => {
     const containerStyle = css`
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-left: 45px;
-    gap: 15px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-left: 45px;
+      gap: 15px;
       opacity: 0;
-    ::-webkit-scrollbar {
-      display: none;
-    }
+      overflow-style: unset;
+      &::-webkit-scrollbar {
+        display: none !important;
+      }
   
-    @media (max-width: ${breakPoints.md}) {
-      padding-left: 30px;
-      gap: 10px;
-    }
-  
-    @media (max-width: ${breakPoints.sm}) {
-      padding-left: 20px;
-      gap: 8px;
-    }
-  
-    @media (max-width: ${breakPoints.xs}) {
-      padding-left: 10px;
-      gap: 5px;
-    }
-  `;
+      @media (max-width: ${breakPoints.md}) {
+        padding-left: 30px;
+        gap: 10px;
+      }
+    
+      @media (max-width: ${breakPoints.sm}) {
+        padding-left: 20px;
+        gap: 8px;
+      }
+    
+      @media (max-width: ${breakPoints.xs}) {
+        padding-left: 10px;
+        gap: 5px;
+      }
+    `;
     return (
     <Container style={containerStyle} ref={ref}>
       {children}

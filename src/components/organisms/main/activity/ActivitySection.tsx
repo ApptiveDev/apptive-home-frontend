@@ -6,30 +6,33 @@ import { ReactNode } from 'react';
 import ActivityCardSection from '@components/organisms/main/activity/ActivityCardSection';
 import ActivityTimelineSection from './ActivityTimelineSection';
 
-function ActivitySection() {
+function ActivitySection({ id }: { id?: string }) {
   return (
-    <Container
+    <section id={id}>
+      <Container
       size="full-width"
       justify="center"
       style={{
         backgroundColor: colors.light.background.darken,
       }}
-    >
-      <ActivityContainer>
-        <Container size="full-width" justify="flex-end">
-          <Heading.XLarge>Activity of APPTIVE</Heading.XLarge>
-        </Container>
-        <Container size="full-width" padding="40px 0">
-          <ActivityCardSection />
-        </Container>
-        <Container size="full-width">
-          <Heading.XSmall>Activity of 2nd semester 2024</Heading.XSmall>
-        </Container>
-        <Container size="full-width">
-          <ActivityTimelineSection mode="light" />
-        </Container>
-      </ActivityContainer>
-    </Container>
+      >
+        <ActivityContainer>
+          <Container size="full-width" justify="flex-end">
+            <Heading.XLarge>Activity of APPTIVE</Heading.XLarge>
+          </Container>
+          <Container size="full-width" padding="40px 0">
+            <ActivityCardSection />
+          </Container>
+          <Container size="full-width">
+            <Heading.XSmall>Activity of 2nd semester 2024</Heading.XSmall>
+          </Container>
+          <Container size="full-width">
+            <ActivityTimelineSection mode="light" />
+          </Container>
+        </ActivityContainer>
+      </Container>
+    </section>
+    
   );
 }
 
