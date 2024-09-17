@@ -1,7 +1,7 @@
 function useSmoothScroll(targetPosition: number) {
   const startPosition = window.scrollY;
   const distance = targetPosition - startPosition;
-  const duration = 500; // 스크롤 애니메이션 시간 (밀리초)
+  const duration = 500; 
   let startTime: number | null = null;
 
   const animation = (currentTime: any) => {
