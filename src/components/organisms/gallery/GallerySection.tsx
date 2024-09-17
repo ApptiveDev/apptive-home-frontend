@@ -81,53 +81,53 @@ function GallerySection({ id }: { id?: string }) {
   return (
     <section id={id}>
       <Container size="full-width" justify="center">
-      <GalleryContainer>
-        <Container size="full-width" justify="flex-end">
-          <Heading.XLarge>APPTIVE Gallery</Heading.XLarge>
-        </Container>
-        <Container
-          direction="column"
-          size="full-width"
-          justify="center"
-          align="center"
-          gap="40px"
-          padding="20px 0"
-          responsiveStyle={{
-            md: { display: 'none' }, // sm 화면 이상에서는 숨김
-          }}
-        >
-          {cardData.map((card) => (
-            <GalleryCard title={card.title} url={card.url} image={card.image} />
-          ))}
-        </Container>
-        <Container
-          style={{ display: 'none' }}
-          responsiveStyle={{
-            md: { display: 'flex' }, // sm 화면 이상에서는 보임
-          }}
-          gap="32px"
-        >
-          <Container direction="column" gap="60px">
-            {evenIndexCards.map((card) => (
-              <GalleryCard
-                title={card.title}
-                url={card.url}
-                image={card.image}
-              />
+        <GalleryContainer>
+          <Container size="full-width" justify="flex-end">
+            <Heading.XLarge>APPTIVE Gallery</Heading.XLarge>
+          </Container>
+          <Container
+            direction="column"
+            size="full-width"
+            justify="center"
+            align="center"
+            gap="40px"
+            padding="20px 0"
+            responsiveStyle={{
+              md: { display: 'none' }, // sm 화면 이상에서는 숨김
+            }}
+          >
+            {cardData.map((card) => (
+              <GalleryCard title={card.title} url={card.url} image={card.image} />
             ))}
           </Container>
-          <Container direction="column" gap="32px" padding="230px 0 0 0 ">
-            {oddIndexCards.map((card) => (
-              <GalleryCard
-                title={card.title}
-                url={card.url}
-                image={card.image}
-              />
-            ))}
+          <Container
+            style={{ display: 'none' }}
+            responsiveStyle={{
+              md: { display: 'flex' }, // sm 화면 이상에서는 보임
+            }}
+            gap="32px"
+          >
+            <Container direction="column" gap="60px">
+              {evenIndexCards.map((card) => (
+                <GalleryCard
+                  title={card.title}
+                  url={card.url}
+                  image={card.image}
+                />
+              ))}
+            </Container>
+            <Container direction="column" gap="32px" padding="230px 0 0 0 ">
+              {oddIndexCards.map((card) => (
+                <GalleryCard
+                  title={card.title}
+                  url={card.url}
+                  image={card.image}
+                />
+              ))}
+            </Container>
           </Container>
-        </Container>
-      </GalleryContainer>
-    </Container>
+        </GalleryContainer>
+      </Container>
     </section>
     
   );

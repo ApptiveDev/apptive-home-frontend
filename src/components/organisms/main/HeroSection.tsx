@@ -10,34 +10,34 @@ import { getLandingKeyframes } from '@/utils';
 function HeroSection({ id }: { id?: string }) {
   return (
     <section id={id}>
-      
-    <HeroContainer>
-      <Container size="full-width" maxWidth="1210px" justify="center">
-        <Container direction="column" align="center">
-          <Heading.XSmall
-            css={{
-              opacity: 0,
-              animation: `${getLandingKeyframes(true)} 0.5s ease-in-out forwards 1s`,
-            }}
-          >
-            부산대학교 대표 IT 프로젝트 동아리
-          </Heading.XSmall>
-          <HeroText />
-          <Button
-            theme="light-outlined"
-            css={{
-              marginTop: '15px',
-              opacity: 0,
-              animation: `${getLandingKeyframes()} 0.5s ease-in-out forwards 1s`,
-            }}
-          >
-            <TextBody.Large weight="bold">
-              21기 모집 링크 바로가기
-            </TextBody.Large>
-          </Button>
+      <HeroContainer>
+        <Container size="full-width" maxWidth="1210px" justify="center">
+          <Container direction="column" align="center">
+            <Heading.XSmall
+              css={{
+                opacity: 0,
+                animation: `${getLandingKeyframes(true)} 0.5s ease-in-out forwards 1s`,
+              }}
+            >
+              부산대학교 대표 IT 프로젝트 동아리
+            </Heading.XSmall>
+            <HeroText />
+            <Button
+              theme="light-outlined"
+              css={{
+                marginTop: '15px',
+                opacity: 0,
+                animation: `${getLandingKeyframes()} 0.5s ease-in-out forwards 1s`,
+              }}
+            >
+              <TextBody.Large weight="bold">
+                21기 모집 링크 바로가기
+              </TextBody.Large>
+            </Button>
+          </Container>
         </Container>
-      </Container>
-    </HeroContainer></section>
+      </HeroContainer>
+    </section>
   );
 }
 
