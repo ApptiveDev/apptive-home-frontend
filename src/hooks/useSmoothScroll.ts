@@ -1,7 +1,7 @@
 function useSmoothScroll(targetPosition: number) {
   const startPosition = window.scrollY;
   const distance = targetPosition - startPosition;
-  const duration = 500; 
+  const duration = 500;
   let startTime: number | null = null;
 
   const animation = (currentTime: any) => {
@@ -13,14 +13,14 @@ function useSmoothScroll(targetPosition: number) {
     if (timeElapsed < duration) requestAnimationFrame(animation);
   };
 
-  const ease = (time: number, base: number, distance: number, duration: number) => {
-    time /= duration / 2;
-    if (time < 1) return (distance / 2) * time * time + base;
+  const ease = (time: number, base: number, _distance: number, _duration: number) => {
+    time /= _duration / 2;
+    if (time < 1) return (_distance / 2) * time * time + base;
     time--;
-    return (-distance / 2) * (time * (time - 2) - 1) + base;
+    return (-_distance / 2) * (time * (time - 2) - 1) + base;
   };
 
   requestAnimationFrame(animation);
-};
+}
 
 export default useSmoothScroll;
